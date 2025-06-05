@@ -24,18 +24,21 @@ def fetch_yes24_bestsellers():
     items = soup.select("#yesBestList > li")
 
     for idx, item in enumerate(items, start=1):
+        if idx > 20:
+            break
+
         title = item.select_one(".gd_name").get_text(strip=True)
         author = item.select_one(".authPub.info_auth").get_text(strip=True)
         publisher = item.select_one(".authPub.info_pub").get_text(strip=True)
         price = item.select_one(".yes_b").get_text(strip=True)
         
         books.append({
-            "rank": idx,
+            "book_rank": idx,
             "title": title,
             "author": author,
             "publisher": publisher,
             "price": price,
-            "date": today
+            "date_added": today
         })
 
     df = pd.DataFrame(books)

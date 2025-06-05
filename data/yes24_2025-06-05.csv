@@ -1,4 +1,4 @@
-rank,title,author,publisher,price,date
+book_rank,title,author,publisher,price,date_added
 1,청춘의 독서,유시민저,웅진지식하우스,"17,010",2025-06-05
 2,행복한 철학자,우애령저/펀자이씨(엄유진)그림,하늘재,"17,100",2025-06-05
 3,순간을 달리는 할머니 1,펀자이씨(엄유진)글그림,문학동네,"16,200",2025-06-05
