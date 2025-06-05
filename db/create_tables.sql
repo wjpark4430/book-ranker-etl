@@ -8,5 +8,3 @@ CREATE TABLE IF NOT EXISTS book_rank (
     date_added DATE NOT NULL,
     UNIQUE KEY unique_book (title, date_added)
 );
-
-
