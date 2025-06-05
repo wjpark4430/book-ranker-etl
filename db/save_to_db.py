@@ -13,7 +13,6 @@ def load_csv_to_mysql():
         print("CSV 파일이 존재하지 않습니다.")
         return
 
-    # MySQL 접속 정보 (user, password, host, dbname 수정 필요)
     user = 'root'
     password = '1234'
     host = 'localhost'
