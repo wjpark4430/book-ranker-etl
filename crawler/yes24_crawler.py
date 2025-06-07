@@ -1,4 +1,4 @@
-# crawler/yes24_crawler.py
+import os
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
@@ -17,44 +17,64 @@ def fetch_yes24_bestsellers():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    driver = webdriver.Chrome(options=options)
-    driver.get(url)
+    driver = None
+    try:
+        driver = webdriver.Chrome(options=options)
+        driver.get(url)
 
-    time.sleep(3)
-    soup = BeautifulSoup(driver.page_source, "html.parser")
+        time.sleep(3)
+        soup = BeautifulSoup(driver.page_source, "html.parser")
 
-    books = []
-    today = datetime.today().strftime("%Y-%m-%d")
+        books = []
+        today = datetime.today().strftime("%Y-%m-%d")
 
-    items = soup.select("#yesBestList > li")
+        items = soup.select("#yesBestList > li")
 
-    for idx, item in enumerate(items, start=1):
-        if idx > 20:
-            break
+        for idx, item in enumerate(items, start=1):
+            if idx > 20:
+                break
+
+            try:
+                title = item.select_one(".gd_name").get_text(strip=True)
+            except AttributeError:
+                continue
+
+            author = item.select_one(".authPub.info_auth").get_text(strip=True)
+            publisher = item.select_one(".authPub.info_pub").get_text(strip=True)
+            price = item.select_one(".yes_b").get_text(strip=True)
+
+            books.append(
+                {
+                    "book_rank": idx,
+                    "title": title,
+                    "author": author,
+                    "publisher": publisher,
+                    "price": price,
+                    "date_added": today,
+                }
+            )
+
+        df = pd.DataFrame(books)
+
+        output_dir = "data"
+        output_file = f"{output_dir}/yes24_{today}.csv"
 
         try:
-            title = item.select_one(".gd_name").get_text(strip=True)
-        except AttributeError:
-            continue
+            os.makedirs(output_dir, exist_ok=True)
+            df.to_csv(output_file, index=False)
 
-        author = item.select_one(".authPub.info_auth").get_text(strip=True)
-        publisher = item.select_one(".authPub.info_pub").get_text(strip=True)
-        price = item.select_one(".yes_b").get_text(strip=True)
+            print(f"{len(df)}개 도서 저장 완료")
+        except PermissionError:
+            print("[CSV 저장 오류] 권한이 없어 파일을 저장할 수 없습니다.")
+        except OSError as e:
+            print(f"[CSV 저장 오류] 기타 저장 실패: {e}")
 
-        books.append(
-            {
-                "book_rank": idx,
-                "title": title,
-                "author": author,
-                "publisher": publisher,
-                "price": price,
-                "date_added": today,
-            }
-        )
+    except Exception as e:
+        print(f"[크롤링 오류] {e}")
 
-    df = pd.DataFrame(books)
-    df.to_csv(f"data/yes24_{today}.csv", index=False)
-    print(f"{len(df)}개 도서 저장 완료")
+    finally:
+        if driver:
+            driver.quit()
 
 
 if __name__ == "__main__":
