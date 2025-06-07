@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 import pandas as pd
 import time
 
@@ -10,7 +11,13 @@ import time
 def fetch_yes24_bestsellers():
     url = "https://www.yes24.com/Product/Category/BestSeller"
     headers = {"User-Agent": "Mozilla/5.0 "}
-    driver = webdriver.Chrome()
+
+    options = Options()
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+
+    driver = webdriver.Chrome(options=options)
     driver.get(url)
 
     time.sleep(3)

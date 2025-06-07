@@ -1,2 +1,2 @@
 @echo off
-bash -l -c "/c/Users/User/Documents/book-ranker-etl/run_crawler.sh"
+"C:\Program Files\Git\usr\bin\bash.exe" -l -c "./daily_rank.sh"
