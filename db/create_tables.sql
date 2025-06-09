@@ -9,7 +9,8 @@ CREATE TABLE IF NOT EXISTS book_rank (
     book_id INT NOT NULL,
     book_rank INT NOT NULL,
     date_added DATE NOT NULL,
-    FOREIGN KEY (book_id) REFERENCES book(id) UNIQUE KEY unique_book (book_id, date_added)
+    FOREIGN KEY (book_id) REFERENCES book(id),
+    UNIQUE KEY unique_book (book_id, date_added)
 );
 CREATE TABLE IF NOT EXISTS person (
     id INT AUTO_INCREMENT PRIMARY KEY,

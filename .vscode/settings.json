@@ -9,9 +9,9 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "database": "book_rank",
-            "username": "root",
-            "name": "local"
+            "name": "localhost",
+            "database": "book_crawling",
+            "username": "root"
         }
     ]
 }
