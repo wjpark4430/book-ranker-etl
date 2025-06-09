@@ -1,5 +1,4 @@
 import pandas as pd
-from sqlalchemy import create_engine
 from datetime import datetime
 from db.db_connector import get_engine
 
