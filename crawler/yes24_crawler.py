@@ -56,6 +56,10 @@ def fetch_yes24_bestsellers():
 
         df = pd.DataFrame(books)
 
+        if df.empty:
+            print("[크롤링 오류] 도서 정보를 가져오지 못했습니다.")
+            return
+
         output_dir = "data"
         output_file = f"{output_dir}/yes24_{today}.csv"
 
