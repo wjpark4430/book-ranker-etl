@@ -1,16 +1,14 @@
 import os
-import requests
+import pandas as pd
+import time
 from bs4 import BeautifulSoup
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import pandas as pd
-import time
 
 
 def fetch_yes24_bestsellers():
     url = "https://www.yes24.com/Product/Category/BestSeller"
-    headers = {"User-Agent": "Mozilla/5.0 "}
 
     options = Options()
     options.add_argument("--headless")
@@ -18,6 +16,7 @@ def fetch_yes24_bestsellers():
     options.add_argument("--disable-dev-shm-usage")
 
     driver = None
+
     try:
         driver = webdriver.Chrome(options=options)
         driver.get(url)
@@ -67,7 +66,7 @@ def fetch_yes24_bestsellers():
             os.makedirs(output_dir, exist_ok=True)
             df.to_csv(output_file, index=False)
 
-            print(f"{len(df)}개 도서 저장 완료")
+            print(f"YES24에서 {len(df)}권 도서 저장 완료")
         except PermissionError:
             print("[CSV 저장 오류] 권한이 없어 파일을 저장할 수 없습니다.")
         except OSError as e:
