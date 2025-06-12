@@ -30,23 +30,34 @@
 ```
 book-ranker-etl/
 │
-├── crawler/                # 웹 크롤링 모듈
+├── crawler/                   # 웹 크롤링 모듈
 │   └── yes24_crawler.py
 │
-├── db/               # DB 연결 및 쿼리 관련 코드
-│   ├── create_tables.sql          # 테이블 생성 SQL
+├── db/                        # DB 연결 및 쿼리 관련 코드
+│   ├── create_tables.sql      # 테이블 생성 SQL
+│   ├── db_connector           # db 연결 모듈
 │   └── save_to_db.py
 │
-├── data/                   # 수집된 CSV 데이터 저장 폴더
+├── data/                      # 수집된 CSV 데이터 저장 폴더
 │
-├── analysis/               # 분석용 SQL 또는 시각화
+├── analysis/                  # 분석용 SQL 또는 시각화
+│   ├── date_first.sql         # 날짜별 1위 분석 SQL
+│   └── top_author.sql         # TOP 20 중 가장 많은 저자 SQL
 │   
-├── scheduler/              # 자동화 스크립트 (로컬 실행용 .sh 등)
+├── scheduler/                 # 자동화 스크립트 (로컬 실행용 .sh 등)
 │   ├── daily_rank_win.bat
 │   └── daily_rank.sh
+│ 
+├── test/                      # Test Code
+│   └── daily_rank.sh          # crawler test
+│ 
+├── visualizer/                # plot를 통한 시각화
+│   ├── plot_date_first.sql    # 날짜별 1위 plot
+│   └── plot_top_author.sql    # TOP 20 중 가장 많은 저자 plot
 │
-├── requirements.txt        # 필요 패키지 목록
-└── README.md               # 프로젝트 설명 파일
+├── .gitignore                 
+├── requirements.txt           # 필요 패키지 목록
+└── README.md                  # 프로젝트 설명 파일
 ```
 
 ---
@@ -71,23 +82,39 @@ book-ranker-etl/
 2. **MySQL DB 테이블 생성**
 
    ```sql
-    -- create_tables.sql 참고
-    CREATE TABLE IF NOT EXISTS book_rank (
-        id INT PRIMARY KEY,
-        book_rank INT NOT NULL,
-        title VARCHAR(255) NOT NULL,
-        author VARCHAR(255) NOT NULL,
-        publisher VARCHAR(255) NOT NULL,
-        price INT NOT NULL,
-        date_added DATE NOT NULL,
-        UNIQUE KEY unique_book (title, date_added)
-    );
+   -- create_tables.sql 참고
+   CREATE TABLE IF NOT EXISTS book (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       title VARCHAR(255) NOT NULL,
+       publisher VARCHAR(255) NOT NULL,
+       price INT NOT NULL
+   );
+   CREATE TABLE IF NOT EXISTS book_rank (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       book_id INT NOT NULL,
+       book_rank INT NOT NULL,
+       date_added DATE NOT NULL,
+       FOREIGN KEY (book_id) REFERENCES book(id),
+       UNIQUE KEY unique_book (book_id, date_added)
+   );
+   CREATE TABLE IF NOT EXISTS person (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       name VARCHAR(255) NOT NULL
+   );
+   CREATE TABLE IF NOT EXISTS contribute (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       person_id INT NOT NULL,
+       book_id INT NOT NULL,
+       book_role VARCHAR(255) NOT NULL,
+       FOREIGN KEY (person_id) REFERENCES person(id),
+       FOREIGN KEY (book_id) REFERENCES book(id)
+   );
    ```
 
 3. **크롤러 실행**
 
    ```bash
-   python crawler/yes24_crawler.py
+   python -m crawler.yes24_crawler
    ```
 
 4. **자동화 스크립트 실행**
