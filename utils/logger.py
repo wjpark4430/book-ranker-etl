@@ -3,9 +3,9 @@ import os
 from datetime import datetime
 
 
-def setup_logger(name: str, level=logging.INFO, log_dir="logs"):
+def setup_logger(name: str = "etl", level=logging.INFO, log_dir="logs"):
     os.makedirs(log_dir, exist_ok=True)
-    log_filename = os.path.join(log_dir, f"{datetime.now():%Y-%m-%d}.log")
+    log_filename = os.path.join(log_dir, f"{name}_{datetime.now():%Y_%m_%d}.log")
 
     logger = logging.getLogger(name)
     logger.setLevel(level)

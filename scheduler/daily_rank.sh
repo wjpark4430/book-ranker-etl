@@ -5,12 +5,12 @@ cd "$(dirname "$0")/.." || exit
 
 # 2. 크롤링 실행
 echo "[`date`] 크롤링 시작"
-python -u crawler/yes24_crawler.py
-python -u crawler/aladin_crawler.py
+python -u -m crawler.yes24_crawler
+python -u -m crawler.aladin_crawler
 
 # 3. DB 저장 실행
 echo "[`date`] DB 저장 시작"
-python db/save_to_db_aladin.py
-python db/save_to_db_yes24.py
+python -m db.save_to_db_aladin
+python -m db.save_to_db_yes24
 
 echo "[`date`] 작업 완료"
