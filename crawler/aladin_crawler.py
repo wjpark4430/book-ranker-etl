@@ -6,9 +6,13 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from utils.logger import setup_logger
 
 
 def fetch_aladin_bestsellers():
+    log = setup_logger("aladin_crawler")
+    log.info("알라딘 베스트셀러 크롤링 시작")
+
     url = "https://www.aladin.co.kr/shop/common/wbest.aspx?BestType=Bestseller&BranchType=1"
 
     options = Options()
@@ -71,7 +75,7 @@ def fetch_aladin_bestsellers():
             # 가격 추출
             price = item.select_one(".ss_p2").get_text(strip=True)
 
-            print(
+            log.info(
                 f"Processing book {idx}: {title} by {contributors} ({publisher}) - {price}"
             )
 
@@ -90,7 +94,7 @@ def fetch_aladin_bestsellers():
             df = pd.DataFrame(books)
 
             if df.empty:
-                print("[ALADIN-크롤링 오류] 도서 정보를 가져오지 못했습니다.")
+                log.error("[ALADIN-크롤링 오류] 도서 정보를 가져오지 못했습니다.")
                 return
 
         output_dir = "data"
@@ -100,13 +104,13 @@ def fetch_aladin_bestsellers():
             os.makedirs(output_dir, exist_ok=True)
             df.to_csv(output_file, index=False)
 
-            print(f"알라딘 에서 {len(df)}권 도서 저장 완료")
+            log.info(f"알라딘 에서 {len(df)}권 도서 저장 완료")
         except PermissionError:
-            print("[ALADIN-CSV 저장 오류] 권한이 없어 파일을 저장할 수 없습니다.")
+            log.error("[ALADIN-CSV 저장 오류] 권한이 없어 파일을 저장할 수 없습니다.")
         except OSError as e:
-            print(f"[ALADIN-CSV 저장 오류] 기타 저장 실패: {e}")
+            log.error(f"[ALADIN-CSV 저장 오류] 기타 저장 실패: {e}")
     except Exception as e:
-        print(f"[ALADIN-크롤링 오류] {e}")
+        log.warning(f"[ALADIN-크롤링 오류] {e}")
 
     finally:
         if driver:
