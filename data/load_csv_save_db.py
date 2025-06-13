@@ -1,28 +1,10 @@
 import pandas as pd
-from datetime import datetime
+import re
 from sqlalchemy import text
 from db.db_connector import get_engine
-import re
 
 
-def parse_contributors(raw_text):
-    contributors = []
-
-    for part in raw_text.split("/"):
-        match = re.match(r"(.+?)(저|역|글그림|그림|글|감수)$", part.strip())
-        if match:
-            name = match.group(1).strip()
-            role = match.group(2)
-            contributors.append({"name": name, "role": role})
-        else:
-            contributors.append({"name": part.strip(), "role": "기타"})
-    return contributors
-
-
-def load_csv_to_mysql():
-    today = datetime.today().strftime("%Y-%m-%d")
-    file_path = f"data/yes24_{today}.csv"
-
+def load_csv_save_mysql(parse_contributors, file_path):
     try:
         df = pd.read_csv(file_path)
         print(f"CSV 파일 로드 완료: {file_path}")
@@ -49,7 +31,7 @@ def load_csv_to_mysql():
                     {
                         "title": row["title"],
                         "publisher": row["publisher"],
-                        "price": int(row["price"].replace(",", "")),
+                        "price": int(re.sub(r"[^\d]", "", str(row["price"]))),
                     },
                 )
                 book_id = result.lastrowid
@@ -61,7 +43,7 @@ def load_csv_to_mysql():
                     VALUES (:book_id, :book_rank, :date_added)
                     """
                 )
-                result = conn.execute(
+                conn.execute(
                     book_rank_insert,
                     {
                         "book_id": book_id,
@@ -71,10 +53,10 @@ def load_csv_to_mysql():
                 )
 
                 # 3. 기여자 파싱 및 저장
-                contributors = parse_contributors(row["author"])
+                contributors = eval(row["author"])
+                parsed = parse_contributors(contributors)
 
-                for contributor in contributors:
-                    # person 저장 또는 중복 방지
+                for contributor in parsed:
                     person_insert = text(
                         """
                         INSERT INTO person (name)
@@ -87,7 +69,6 @@ def load_csv_to_mysql():
                     )
                     person_id = person_result.lastrowid
 
-                    # contribute 저장
                     contribute_insert = text(
                         """
                         INSERT INTO contribute (person_id, book_id, book_role)
@@ -108,7 +89,3 @@ def load_csv_to_mysql():
 
     except Exception as e:
         print("DB 삽입 중 에러 발생:", e)
-
-
-if __name__ == "__main__":
-    load_csv_to_mysql()

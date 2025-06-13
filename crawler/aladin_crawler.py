@@ -42,8 +42,6 @@ def fetch_aladin_bestsellers():
 
             contributors = []
 
-            current_name = None
-
             author_li = item.select(".ss_book_list li")[2]
 
             if author_li:
@@ -92,7 +90,7 @@ def fetch_aladin_bestsellers():
             df = pd.DataFrame(books)
 
             if df.empty:
-                print("[크롤링 오류] 도서 정보를 가져오지 못했습니다.")
+                print("[ALADIN-크롤링 오류] 도서 정보를 가져오지 못했습니다.")
                 return
 
         output_dir = "data"
@@ -102,13 +100,13 @@ def fetch_aladin_bestsellers():
             os.makedirs(output_dir, exist_ok=True)
             df.to_csv(output_file, index=False)
 
-            print(f"알라딘에서 {len(df)}권 도서 저장 완료")
+            print(f"알라딘 에서 {len(df)}권 도서 저장 완료")
         except PermissionError:
-            print("[CSV 저장 오류] 권한이 없어 파일을 저장할 수 없습니다.")
+            print("[ALADIN-CSV 저장 오류] 권한이 없어 파일을 저장할 수 없습니다.")
         except OSError as e:
-            print(f"[CSV 저장 오류] 기타 저장 실패: {e}")
+            print(f"[ALADIN-CSV 저장 오류] 기타 저장 실패: {e}")
     except Exception as e:
-        print(f"[크롤링 오류] {e}")
+        print(f"[ALADIN-크롤링 오류] {e}")
 
     finally:
         if driver:

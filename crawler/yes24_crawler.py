@@ -42,6 +42,8 @@ def fetch_yes24_bestsellers():
             publisher = item.select_one(".authPub.info_pub").get_text(strip=True)
             price = item.select_one(".yes_b").get_text(strip=True)
 
+            print(f"Processing book {idx}: {title} by {author} ({publisher}) - {price}")
+
             books.append(
                 {
                     "book_rank": idx,
@@ -56,7 +58,7 @@ def fetch_yes24_bestsellers():
         df = pd.DataFrame(books)
 
         if df.empty:
-            print("[크롤링 오류] 도서 정보를 가져오지 못했습니다.")
+            print("[YES24-크롤링 오류] 도서 정보를 가져오지 못했습니다.")
             return
 
         output_dir = "data"
@@ -66,14 +68,14 @@ def fetch_yes24_bestsellers():
             os.makedirs(output_dir, exist_ok=True)
             df.to_csv(output_file, index=False)
 
-            print(f"YES24에서 {len(df)}권 도서 저장 완료")
+            print(f"YES24 에서 {len(df)}권 도서 저장 완료")
         except PermissionError:
-            print("[CSV 저장 오류] 권한이 없어 파일을 저장할 수 없습니다.")
+            print("[YES24-CSV 저장 오류] 권한이 없어 파일을 저장할 수 없습니다.")
         except OSError as e:
-            print(f"[CSV 저장 오류] 기타 저장 실패: {e}")
+            print(f"[YES24-CSV 저장 오류] 기타 저장 실패: {e}")
 
     except Exception as e:
-        print(f"[크롤링 오류] {e}")
+        print(f"[YES24-크롤링 오류] {e}")
 
     finally:
         if driver:
