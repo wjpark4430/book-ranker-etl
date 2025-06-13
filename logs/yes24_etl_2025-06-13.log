@@ -1,0 +1,120 @@
+2025-06-13 21:30:18 [INFO] yes24_crawler: YES24 ����Ʈ���� ũ�Ѹ� ����
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 1: ������ ���̾�Ʈ ������ by �������� (���) - 19,800
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 2: û���� ���� by ���ù��� (���������Ͽ콺) - 17,010
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 3: ȥ��� by ���س��� (â��) - 16,200
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 4: �� �� ���� �� by �迵���� (��������) - 15,120
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 5: �ᱹ ������ �մϴ� by ������� (�����̺�) - 19,800
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 6: �ູ�� ö���� by ��ַ���/�����̾�(������)�׸� (�ϴ���) - 17,100
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 7: ��ο�TV 3 : ��Ͽ��� ������ �̼� by ��ο� TV����/�ѹٸ���/�����׸� (�л깮ȭ��(���ົ)) - 15,120
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 8: ��� ǰ���� ä��� 100�� �ʻ� ��Ʈ by �������� (û��Life) - 18,000
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 9: �ҳ��� �´� by �Ѱ��� (â��) - 13,500
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 10: �츮�� �������� ������ by ���¿��� (�Ϸθ���) - 17,550
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 11: �ʿ� ��ó�� �� by ������ ���뽺����/�������� (������Ʈ�Ͻ�) - 16,020
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 12: ��� �ູ�� �����ϴ� by �¼��� (������2�Ͻ�) - 16,020
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 13: ���� ���� �帲 by ���̸� ��Ţ��/�����Ͽ� (���ĸӽ�) - 19,800
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 14: ��� by ������� (����) - 11,700
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 15: Ȥ��, �� ����ص� �ɱ��? by �־���� (�ʸ�) - 17,820
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 16: �̷ο� ���� �Ƿο� ���� by �ְ���,�ְ����� (�Ѱܷ�����) - 18,000
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 17: �̼����� �� �ҹ� by �ҹ��� (������Ʈ) - 18,900
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 18: �׳� �ϴ� ��� by ���ѱ��� (������Ʈ) - 16,920
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 19: ������ �� ���� by �������� (ī�ÿ����) - 15,750
+2025-06-13 21:30:25 [INFO] yes24_crawler: Processing book 20: �����ཬ by �����帮�� ��ü�� (������) - 16,020
+2025-06-13 21:30:25 [INFO] yes24_crawler: YES24 ���� 20�� ���� ���� �Ϸ�
+CSV ���� �ε� �Ϸ�: data/aladin_2025-06-13.csv
+20�� ������ MySQL�� ���� �Ϸ�
+2025-06-13 21:45:07 [INFO] yes24_crawler: YES24 베스트셀러 크롤링 시작
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 1: 유지만 다이어트 레시피 by 유지만저 (길벗) - 19,800
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 2: 청춘의 독서 by 유시민저 (웅진지식하우스) - 17,010
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 3: 혼모노 by 성해나저 (창비) - 16,200
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 4: 단 한 번의 삶 by 김영하저 (복복서가) - 15,120
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 5: 결국 국민이 합니다 by 이재명저 (오마이북) - 19,800
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 6: 행복한 철학자 by 우애령저/펀자이씨(엄유진)그림 (하늘재) - 17,100
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 7: 멜로우TV 3 : 멜싹오싹 위험한 미션 by 멜로우 TV원저/한바리글/차차그림 (학산문화사(단행본)) - 15,120
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 8: 어른의 품격을 채우는 100일 필사 노트 by 김종원저 (청림Life) - 18,000
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 9: 소년이 온다 by 한강저 (창비) - 13,500
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 10: 우리의 낙원에서 만나자 by 하태완저 (북로망스) - 17,550
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 11: 초역 부처의 말 by 코이케 류노스케저/박재현역 (포레스트북스) - 16,020
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 12: 어른의 행복은 조용하다 by 태수저 (페이지2북스) - 16,020
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 13: 왓츠 유어 드림 by 사이먼 스큅저/최인하역 (북파머스) - 19,800
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 14: 모순 by 양귀자저 (쓰다) - 11,700
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 15: 혹시, 돈 얘기해도 될까요? by 주언규저 (필름) - 17,820
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 16: 이로운 보수 의로운 진보 by 최강욱,최강혁저 (한겨레출판) - 18,000
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 17: 미술관에 간 할미 by 할미저 (더퀘스트) - 18,900
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 18: 그냥 하는 사람 by 김한균저 (온포인트) - 16,920
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 19: 엄마의 말 연습 by 윤지영저 (카시오페아) - 15,750
+2025-06-13 21:45:14 [INFO] yes24_crawler: Processing book 20: 위버멘쉬 by 프리드리히 니체저 (떠오름) - 16,020
+2025-06-13 21:45:14 [INFO] yes24_crawler: YES24 에서 20권 도서 저장 완료
+CSV 파일 로드 완료: data/aladin_2025-06-13.csv
+20건 데이터 MySQL에 삽입 완료
+2025-06-13 21:47:25 [INFO] yes24_crawler: YES24 베스트셀러 크롤링 시작
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 1: 유지만 다이어트 레시피 by 유지만저 (길벗) - 19,800
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 2: 청춘의 독서 by 유시민저 (웅진지식하우스) - 17,010
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 3: 혼모노 by 성해나저 (창비) - 16,200
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 4: 단 한 번의 삶 by 김영하저 (복복서가) - 15,120
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 5: 결국 국민이 합니다 by 이재명저 (오마이북) - 19,800
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 6: 행복한 철학자 by 우애령저/펀자이씨(엄유진)그림 (하늘재) - 17,100
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 7: 멜로우TV 3 : 멜싹오싹 위험한 미션 by 멜로우 TV원저/한바리글/차차그림 (학산문화사(단행본)) - 15,120
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 8: 어른의 품격을 채우는 100일 필사 노트 by 김종원저 (청림Life) - 18,000
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 9: 소년이 온다 by 한강저 (창비) - 13,500
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 10: 우리의 낙원에서 만나자 by 하태완저 (북로망스) - 17,550
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 11: 초역 부처의 말 by 코이케 류노스케저/박재현역 (포레스트북스) - 16,020
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 12: 어른의 행복은 조용하다 by 태수저 (페이지2북스) - 16,020
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 13: 왓츠 유어 드림 by 사이먼 스큅저/최인하역 (북파머스) - 19,800
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 14: 모순 by 양귀자저 (쓰다) - 11,700
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 15: 혹시, 돈 얘기해도 될까요? by 주언규저 (필름) - 17,820
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 16: 이로운 보수 의로운 진보 by 최강욱,최강혁저 (한겨레출판) - 18,000
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 17: 미술관에 간 할미 by 할미저 (더퀘스트) - 18,900
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 18: 그냥 하는 사람 by 김한균저 (온포인트) - 16,920
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 19: 엄마의 말 연습 by 윤지영저 (카시오페아) - 15,750
+2025-06-13 21:47:32 [INFO] yes24_crawler: Processing book 20: 위버멘쉬 by 프리드리히 니체저 (떠오름) - 16,020
+2025-06-13 21:47:32 [INFO] yes24_crawler: YES24 에서 20권 도서 저장 완료
+CSV 파일 로드 완료: data/aladin_2025-06-13.csv
+20건 데이터 MySQL에 삽입 완료
+2025-06-13 21:50:01 [INFO] yes24_crawler: YES24 베스트셀러 크롤링 시작
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 1: 유지만 다이어트 레시피 by 유지만저 (길벗) - 19,800
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 2: 청춘의 독서 by 유시민저 (웅진지식하우스) - 17,010
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 3: 혼모노 by 성해나저 (창비) - 16,200
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 4: 단 한 번의 삶 by 김영하저 (복복서가) - 15,120
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 5: 결국 국민이 합니다 by 이재명저 (오마이북) - 19,800
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 6: 행복한 철학자 by 우애령저/펀자이씨(엄유진)그림 (하늘재) - 17,100
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 7: 멜로우TV 3 : 멜싹오싹 위험한 미션 by 멜로우 TV원저/한바리글/차차그림 (학산문화사(단행본)) - 15,120
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 8: 어른의 품격을 채우는 100일 필사 노트 by 김종원저 (청림Life) - 18,000
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 9: 소년이 온다 by 한강저 (창비) - 13,500
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 10: 우리의 낙원에서 만나자 by 하태완저 (북로망스) - 17,550
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 11: 초역 부처의 말 by 코이케 류노스케저/박재현역 (포레스트북스) - 16,020
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 12: 어른의 행복은 조용하다 by 태수저 (페이지2북스) - 16,020
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 13: 왓츠 유어 드림 by 사이먼 스큅저/최인하역 (북파머스) - 19,800
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 14: 모순 by 양귀자저 (쓰다) - 11,700
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 15: 혹시, 돈 얘기해도 될까요? by 주언규저 (필름) - 17,820
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 16: 이로운 보수 의로운 진보 by 최강욱,최강혁저 (한겨레출판) - 18,000
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 17: 미술관에 간 할미 by 할미저 (더퀘스트) - 18,900
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 18: 그냥 하는 사람 by 김한균저 (온포인트) - 16,920
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 19: 엄마의 말 연습 by 윤지영저 (카시오페아) - 15,750
+2025-06-13 21:50:08 [INFO] yes24_crawler: Processing book 20: 위버멘쉬 by 프리드리히 니체저 (떠오름) - 16,020
+2025-06-13 21:50:08 [INFO] yes24_crawler: YES24 에서 20권 도서 저장 완료
+CSV 파일 로드 완료: data/aladin_2025-06-13.csv
+20건 데이터 MySQL에 삽입 완료
+2025-06-13 21:51:42 [INFO] yes24_crawler: YES24 베스트셀러 크롤링 시작
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 1: 유지만 다이어트 레시피 by 유지만저 (길벗) - 19,800
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 2: 청춘의 독서 by 유시민저 (웅진지식하우스) - 17,010
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 3: 혼모노 by 성해나저 (창비) - 16,200
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 4: 단 한 번의 삶 by 김영하저 (복복서가) - 15,120
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 5: 결국 국민이 합니다 by 이재명저 (오마이북) - 19,800
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 6: 행복한 철학자 by 우애령저/펀자이씨(엄유진)그림 (하늘재) - 17,100
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 7: 멜로우TV 3 : 멜싹오싹 위험한 미션 by 멜로우 TV원저/한바리글/차차그림 (학산문화사(단행본)) - 15,120
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 8: 어른의 품격을 채우는 100일 필사 노트 by 김종원저 (청림Life) - 18,000
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 9: 소년이 온다 by 한강저 (창비) - 13,500
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 10: 우리의 낙원에서 만나자 by 하태완저 (북로망스) - 17,550
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 11: 초역 부처의 말 by 코이케 류노스케저/박재현역 (포레스트북스) - 16,020
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 12: 어른의 행복은 조용하다 by 태수저 (페이지2북스) - 16,020
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 13: 왓츠 유어 드림 by 사이먼 스큅저/최인하역 (북파머스) - 19,800
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 14: 모순 by 양귀자저 (쓰다) - 11,700
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 15: 혹시, 돈 얘기해도 될까요? by 주언규저 (필름) - 17,820
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 16: 이로운 보수 의로운 진보 by 최강욱,최강혁저 (한겨레출판) - 18,000
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 17: 미술관에 간 할미 by 할미저 (더퀘스트) - 18,900
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 18: 그냥 하는 사람 by 김한균저 (온포인트) - 16,920
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 19: 엄마의 말 연습 by 윤지영저 (카시오페아) - 15,750
+2025-06-13 21:51:49 [INFO] yes24_crawler: Processing book 20: 위버멘쉬 by 프리드리히 니체저 (떠오름) - 16,020
+2025-06-13 21:51:49 [INFO] yes24_crawler: YES24 에서 20권 도서 저장 완료
+CSV 파일 로드 완료: data/aladin_2025-06-13.csv
+20건 데이터 MySQL에 삽입 완료
