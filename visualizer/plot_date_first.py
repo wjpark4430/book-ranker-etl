@@ -18,7 +18,7 @@ def visualize_date_first(df):
 def main():
     engine = get_engine()
 
-    file_path = f"analysis/date_first.sql"
+    file_path = f"analysis/date_first_yes24.sql"
     sql = open(file_path, "r", encoding="utf-8").read()
     df = pd.read_sql(sql, engine)
 
