@@ -6,6 +6,7 @@ from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from utils.logger import setup_logger
+from utils.retry import with_retry
 
 
 def fetch_yes24_bestsellers():
@@ -89,4 +90,12 @@ def fetch_yes24_bestsellers():
 
 
 if __name__ == "__main__":
-    fetch_yes24_bestsellers()
+    log = setup_logger("yes24_crawler")
+
+    with_retry(
+        fetch_yes24_bestsellers,
+        log,
+        max_retries=3,
+        delay=5,
+        task_name="YES24 크롤링",
+    )

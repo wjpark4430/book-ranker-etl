@@ -12,5 +12,5 @@ PYTHONIOENCODING=utf-8 python -u -m crawler.aladin_crawler >> logs/aladin_etl_$T
 
 # 3. DB 저장 실행
 echo "[`date`] DB 저장 시작"
-PYTHONIOENCODING=utf-8 python -u -m db.save_to_db_aladin >> logs/yes24_etl_$TODAY.log 2>&1
-PYTHONIOENCODING=utf-8 python -u -m db.save_to_db_yes24 >> logs/aladin_etl_$TODAY.log 2>&1
+PYTHONIOENCODING=utf-8 python -u -m db.save_to_db_yes24 >> logs/yes24_etl_$TODAY.log 2>&1
+PYTHONIOENCODING=utf-8 python -u -m db.save_to_db_aladin >> logs/aladin_etl_$TODAY.log 2>&1

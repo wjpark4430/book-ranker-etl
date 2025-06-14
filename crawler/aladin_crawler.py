@@ -7,6 +7,7 @@ from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from utils.logger import setup_logger
+from utils.retry import with_retry
 
 
 def fetch_aladin_bestsellers():
@@ -72,7 +73,6 @@ def fetch_aladin_bestsellers():
                 else "출판사 정보 없음"
             )
 
-            # 가격 추출
             price = item.select_one(".ss_p2").get_text(strip=True)
 
             log.info(
@@ -107,10 +107,13 @@ def fetch_aladin_bestsellers():
             log.info(f"알라딘 에서 {len(df)}권 도서 저장 완료")
         except PermissionError:
             log.error("[ALADIN-CSV 저장 오류] 권한이 없어 파일을 저장할 수 없습니다.")
+            raise
         except OSError as e:
             log.error(f"[ALADIN-CSV 저장 오류] 기타 저장 실패: {e}")
+            raise
     except Exception as e:
         log.warning(f"[ALADIN-크롤링 오류] {e}")
+        raise
 
     finally:
         if driver:
@@ -118,4 +121,13 @@ def fetch_aladin_bestsellers():
 
 
 if __name__ == "__main__":
-    fetch_aladin_bestsellers()
+
+    log = setup_logger("aladin_crawler")
+
+    with_retry(
+        fetch_aladin_bestsellers,
+        log,
+        max_retries=3,
+        delay=5,
+        task_name="ALADIN 크롤링",
+    )
