@@ -30,26 +30,34 @@
 ```
 book-ranker-etl/
 │
+├── analysis/                  # 분석용 SQL 또는 시각화
+│   ├── date_first_aladin.sql  # 날짜별 1위 분석 SQL (aladin)
+│   ├── date_first_yes24.sql   # 날짜별 1위 분석 SQL (yes24)
+│   └── top_author.sql         # TOP 20 중 가장 많은 저자 SQL
+│ 
 ├── crawler/                   # 웹 크롤링 모듈
 │   └── yes24_crawler.py
+│
+├── data/                      # 수집된 CSV 데이터 저장 폴더
 │
 ├── db/                        # DB 연결 및 쿼리 관련 코드
 │   ├── create_tables.sql      # 테이블 생성 SQL
 │   ├── db_connector           # db 연결 모듈
-│   └── save_to_db.py
+│   ├── save_to_db_aladin.py
+│   └── save_to_db_yes24.py
 │
-├── data/                      # 수집된 CSV 데이터 저장 폴더
-│
-├── analysis/                  # 분석용 SQL 또는 시각화
-│   ├── date_first.sql         # 날짜별 1위 분석 SQL
-│   └── top_author.sql         # TOP 20 중 가장 많은 저자 SQL
+├── logs/                      # 로그 저장 폴더
 │   
 ├── scheduler/                 # 자동화 스크립트 (로컬 실행용 .sh 등)
 │   ├── daily_rank_win.bat
 │   └── daily_rank.sh
-│ 
+|
 ├── test/                      # Test Code
 │   └── daily_rank.sh          # crawler test
+│
+├── utils/                     # 커스텀 설정
+│   ├── logger.py              # logger 설정
+│   └── retry.py               # 재시도 설
 │ 
 ├── visualizer/                # plot를 통한 시각화
 │   ├── plot_date_first.sql    # 날짜별 1위 plot
@@ -59,6 +67,10 @@ book-ranker-etl/
 ├── requirements.txt           # 필요 패키지 목록
 └── README.md                  # 프로젝트 설명 파일
 ```
+
+---
+### 🎨 ERD 구조
+![ERDCloud](https://github.com/user-attachments/assets/014525a0-e08b-4527-8156-dd324b3566e9)
 
 ---
 
