@@ -10,7 +10,7 @@ def parse_contributors(raw_text):
         match = re.match(r"(.+?)(저|역|글그림|그림|글|감수)$", part.strip())
         if match:
             name = match.group(1).strip()
-            role = match.group(2)
+            role = match.group(2).strip()
             contributors.append({"name": name, "role": role})
         else:
             contributors.append({"name": part.strip(), "role": "기타"})

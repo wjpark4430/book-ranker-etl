@@ -2,6 +2,7 @@ import pandas as pd
 import re
 from sqlalchemy import text
 from db.db_connector import get_engine
+from ast import literal_eval
 
 
 def load_csv_save_mysql(parse_contributors, file_path):
@@ -53,8 +54,18 @@ def load_csv_save_mysql(parse_contributors, file_path):
                 )
 
                 # 3. 기여자 파싱 및 저장
-                contributors = eval(row["author"])
-                parsed = parse_contributors(contributors)
+
+                try:
+                    author_data = literal_eval(row["author"])
+                except (ValueError, SyntaxError):
+                    author_data = row["author"]
+
+                if isinstance(author_data, str):
+                    parsed = parse_contributors(author_data)
+                elif isinstance(author_data, list):
+                    parsed = author_data  # 이미 파싱된 경우
+                else:
+                    parsed = []
 
                 for contributor in parsed:
                     person_insert = text(

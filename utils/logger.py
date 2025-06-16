@@ -1,21 +1,24 @@
 import logging
-import os
 from datetime import datetime
+from pathlib import Path
 
 
-def setup_logger(name: str = "etl", level=logging.INFO, log_dir="logs"):
-    os.makedirs(log_dir, exist_ok=True)
-    log_filename = os.path.join(log_dir, f"{name}_{datetime.now():%Y_%m_%d}.log")
+def setup_logger(name: str = "etl", level=logging.INFO):
+    log_dir = Path("logs") / name
+    log_dir.mkdir(parents=True, exist_ok=True)
+
+    log_filename = log_dir / f"{datetime.now():%Y-%m-%d}.log"
 
     logger = logging.getLogger(name)
     logger.setLevel(level)
 
+    # 중복 핸들러 방지
     if not logger.handlers:
-        # 콘솔용 핸들러: 모든 로그 출력
+        # 콘솔 핸들러 (INFO 이상)
         console_handler = logging.StreamHandler()
         console_handler.setLevel(level)
 
-        # 파일용 핸들러: WARNING 이상만 저장
+        # 파일 핸들러 (WARNING 이상)
         file_handler = logging.FileHandler(log_filename, encoding="utf-8")
         file_handler.setLevel(logging.WARNING)
 
