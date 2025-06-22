@@ -44,13 +44,15 @@ book-ranker-etl/
 │   └── top_author.sql         # TOP 20 중 가장 많은 저자 SQL
 │ 
 ├── crawler/                   # 웹 크롤링 모듈
+│   ├── aladin_crawler.sql   
 │   └── yes24_crawler.py
 │
 ├── data/                      # 수집된 CSV 데이터 저장 폴더
+│   └── load_csv_save_db.py    # 공통 DB 저장 로직
 │
 ├── db/                        # DB 연결 및 쿼리 관련 코드
 │   ├── create_tables.sql      # 테이블 생성 SQL
-│   ├── db_connector           # db 연결 모듈
+│   ├── db_connector.py        # db 연결 모듈
 │   ├── save_to_db_aladin.py
 │   └── save_to_db_yes24.py
 │
@@ -61,7 +63,7 @@ book-ranker-etl/
 │   └── daily_rank.sh
 |
 ├── test/                      # Test Code
-│   └── daily_rank.sh          # crawler test
+│   └── yes24_crawler_test.sh          # crawler test
 │
 ├── utils/                     # 커스텀 설정
 │   ├── logger.py              # logger 설정
