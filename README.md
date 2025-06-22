@@ -1,6 +1,15 @@
 ## 📚 도서 베스트셀러 수집 및 분석 시스템
 
-국내 주요 서점의 베스트셀러 정보를 주기적으로 수집하고, 이를 MySQL에 저장하여 향후 분석할 수 있도록 구성된 데이터 수집 자동화 프로젝트입니다.
+국내 주요 서점(YES24, 알라딘)의 베스트셀러 데이터를 **자동 수집 → MySQL 저장 → SQL 분석 → 시각화**까지 이어지는 ETL 시스템 프로젝트입니다.
+
+[![Python](https://img.shields.io/badge/python-3.11-blue.svg)]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
+[![Test](https://github.com/youruser/book-ranker-etl/actions/workflows/test.yml/badge.svg)]
+
+## 🔗 목차
+1. [프로젝트 개요](#프로젝트-개요)
+2. [기술 스택](#기술-스택)
+3. [프로젝트 구조](#프로젝트-구조)
 
 ---
 
