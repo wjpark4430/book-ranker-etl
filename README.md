@@ -154,13 +154,7 @@ book-ranker-etl/
    );
    ```
 
-3. **크롤러 실행**
-
-   ```bash
-   python -m crawler.yes24_crawler
-   ```
-
-4. **자동화 스크립트 실행**
+3. **자동화 스크립트 실행**
 
    ```bash
    ./scheduler/run_daily.sh
