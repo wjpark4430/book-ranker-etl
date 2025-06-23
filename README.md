@@ -92,6 +92,24 @@ book-ranker-etl/
 * 중복 방지를 위한 DB 삽입 로직 포함
 * 날짜별 랭킹 데이터 축적 가능
 
+```mermaid
+   graph TD
+       A[📅 Windows 스케줄러] --> B1[🧠 daily_rank_win.bat (BAT에서 실행)] --> B2[🧠 daily_rank.sh (Git Bash에서 실행)]
+       B2 --> C1[🐍 yes24_crawler.py]
+       B2 --> C2[🐍 aladin_crawler.py]
+   
+       C1 --> D1[(📄 yes24_YYYY-MM-DD.csv)]
+       C2 --> D2[(📄 aladin_YYYY-MM-DD.csv)]
+   
+       D1 --> E1[💾 save_to_db_yes24.py]
+       D2 --> E2[💾 save_to_db_aladin.py]
+   
+       E1 --> F[(🛢️ MySQL: book / person / contribute / book_rank)]
+       E2 --> F
+   
+       F --> G[📊 분석 SQL → 📈 matplotlib 시각화]
+```
+
 ---
 
 ### 🔄 실행 방법
