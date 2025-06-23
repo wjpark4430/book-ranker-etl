@@ -94,7 +94,8 @@ book-ranker-etl/
 
 ```mermaid
    graph TD
-       A[📅 Windows 스케줄러] --> B1[🧠 daily_rank_win.bat (BAT에서 실행)] --> B2[🧠 daily_rank.sh (Git Bash에서 실행)]
+       A[📅 Windows 스케줄러] --> B1[🧠 daily_rank_win.bat<br>BAT]
+       B1 --> B2[🧠 daily_rank.sh<br>Git Bash]
        B2 --> C1[🐍 yes24_crawler.py]
        B2 --> C2[🐍 aladin_crawler.py]
    
